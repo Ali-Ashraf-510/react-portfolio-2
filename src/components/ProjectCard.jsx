@@ -1,3 +1,13 @@
+import { memo } from 'react';
+
+/**
+ * ProjectCard Component - Individual project display card
+ * Wrapped with React.memo to prevent unnecessary re-renders when parent component updates
+ * 
+ * @param {Object} props - Component props
+ * @param {Object} props.project - Project data object
+ * @returns {JSX.Element} Rendered project card
+ */
 const ProjectCard = ({ project }) => {
   return (
     <article className="card group card-hover-lift h-full flex flex-col">
@@ -79,4 +89,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default memo(ProjectCard);

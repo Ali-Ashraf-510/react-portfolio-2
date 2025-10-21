@@ -1,28 +1,21 @@
-import { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
-import { fetchData } from '../utils/api';
+import { useData, useSEO } from '../hooks';
 
+/**
+ * Contact Page - Contact information and form
+ */
 const Contact = () => {
-  const [profile, setProfile] = useState(null);
+  const { data: profile } = useData('profile');
 
-  useEffect(() => {
-    // Set page title for SEO
-    document.title = 'Contact Me - My Portfolio';
-    
-    const loadProfile = async () => {
-      try {
-        const data = await fetchData('profile');
-        setProfile(data);
-      } catch (error) {
-        console.error('Error loading profile:', error);
-      }
-    };
-
-    loadProfile();
-  }, []);
+  // Set SEO meta tags for contact page
+  useSEO({
+    title: 'Contact',
+    description: 'Get in touch with me. View my contact information and send me a message directly through the contact form.',
+    keywords: 'contact, email, message, reach out, inquiry',
+  });
 
   return (
-    <div className="py-20 bg-white dark:bg-gray-950">
+    <div className="py-20 bg-white">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -35,24 +28,24 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="animate-fade-in">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               Contact Information
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-gray-600 mb-8">
               I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
 
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg">
-                  <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-primary-100 p-3 rounded-lg">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Email</h3>
-                  <a href={`mailto:${profile?.email}`} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                  <a href={`mailto:${profile?.email}`} className="text-gray-600 hover:text-primary-600 transition-colors">
                     {profile?.email || 'your.email@example.com'}
                   </a>
                 </div>
@@ -60,14 +53,14 @@ const Contact = () => {
 
               {/* Phone */}
               <div className="flex items-start gap-4">
-                <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg">
-                  <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-primary-100 p-3 rounded-lg">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Phone</h3>
-                  <a href={`tel:${profile?.phone}`} className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                  <a href={`tel:${profile?.phone}`} className="text-gray-600 hover:text-primary-600 transition-colors">
                     {profile?.phone || '+1 (555) 123-4567'}
                   </a>
                 </div>
@@ -75,29 +68,29 @@ const Contact = () => {
 
               {/* Location */}
               <div className="flex items-start gap-4">
-                <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg">
-                  <svg className="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-primary-100 p-3 rounded-lg">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{profile?.location || 'San Francisco, CA'}</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
+                  <p className="text-gray-600">{profile?.location || 'San Francisco, CA'}</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-4">Follow Me</h3>
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-4">Follow Me</h3>
               <div className="flex gap-4">
                 {profile?.github && (
                   <a
                     href={profile.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 dark:bg-gray-800 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white text-gray-700 dark:text-gray-200 p-3 rounded-lg transition-all"
+                    className="bg-gray-100 hover:bg-primary-600 hover:text-white text-gray-700 p-3 rounded-lg transition-all"
                     aria-label="GitHub"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -110,7 +103,7 @@ const Contact = () => {
                     href={profile.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 dark:bg-gray-800 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white text-gray-700 dark:text-gray-200 p-3 rounded-lg transition-all"
+                    className="bg-gray-100 hover:bg-primary-600 hover:text-white text-gray-700 p-3 rounded-lg transition-all"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -123,7 +116,7 @@ const Contact = () => {
                     href={profile.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 dark:bg-gray-800 hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white text-gray-700 dark:text-gray-200 p-3 rounded-lg transition-all"
+                    className="bg-gray-100 hover:bg-primary-600 hover:text-white text-gray-700 p-3 rounded-lg transition-all"
                     aria-label="Twitter"
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -136,8 +129,8 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="card-alt rounded-2xl p-8 animate-fade-in">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+          <div className="card rounded-2xl p-8 animate-fade-in">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               Send Me a Message
             </h2>
             <ContactForm />

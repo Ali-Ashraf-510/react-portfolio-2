@@ -1,0 +1,18 @@
+# Robots.txt - Controls search engine crawler behavior
+
+# Allow all bots
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /.env
+Disallow: /build
+Disallow: /dist
+
+# Sitemap location
+Sitemap: https://yourportfoliosite.com/sitemap.xml
+
+# Crawl delay (milliseconds)
+Crawl-delay: 1
+
+# Respect robots.txt
+Respect-x-robots-tag: true

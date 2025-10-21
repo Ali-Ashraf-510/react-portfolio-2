@@ -1,3 +1,13 @@
+import { memo } from 'react';
+
+/**
+ * CertificateCard Component - Individual certificate/achievement card
+ * Wrapped with React.memo to prevent unnecessary re-renders when parent component updates
+ * 
+ * @param {Object} props - Component props
+ * @param {Object} props.certificate - Certificate data object
+ * @returns {JSX.Element} Rendered certificate card
+ */
 const CertificateCard = ({ certificate }) => {
   return (
     <article className="card group">
@@ -72,4 +82,4 @@ const CertificateCard = ({ certificate }) => {
   );
 };
 
-export default CertificateCard;
+export default memo(CertificateCard);

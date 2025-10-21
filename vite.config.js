@@ -10,6 +10,24 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    // Disable sourcemaps in production for security (prevents source code exposure)
+    sourcemap: false,
+    // Enable minification for smaller bundle size
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true  // Remove console.log statements from production
+      }
+    },
+    // Code splitting for better caching
+    rollupOptions: {
+      output: {
+        // Split vendor code into separate chunk
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          'form': ['react-hook-form', 'yup', '@hookform/resolvers']
+        }
+      }
+    }
   }
 })

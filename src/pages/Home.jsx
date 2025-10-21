@@ -1,29 +1,25 @@
-import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
-import { fetchData } from '../utils/api';
+import { useData, useSEO } from '../hooks';
 
+/**
+ * Home Page - Landing page with hero section, bio preview, and quick stats
+ */
 const Home = () => {
-  const [profile, setProfile] = useState(null);
+  const { data: profile } = useData('profile');
 
-  useEffect(() => {
-    const loadProfile = async () => {
-      try {
-        const data = await fetchData('profile');
-        setProfile(data);
-      } catch (error) {
-        console.error('Error loading profile:', error);
-      }
-    };
-
-    loadProfile();
-  }, []);
+  // Set SEO meta tags for home page
+  useSEO({
+    title: 'Home',
+    description: 'Welcome to my professional portfolio. Explore my projects, experience, and certifications.',
+    keywords: 'portfolio, web developer, projects, experience, skills',
+  });
 
   return (
     <div>
       <Hero profile={profile} />
       
       {/* About Preview Section */}
-      <section id="about" className="py-20 bg-white dark:bg-gray-900">
+      <section id="about" className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="section-title">About Me</h2>

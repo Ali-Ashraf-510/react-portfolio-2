@@ -31,13 +31,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-gray-300 mt-20 border-t border-gray-800 dark:border-gray-900">
+    <footer className="bg-gray-900 text-gray-300 mt-20 border-t border-gray-800">
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* About Section */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Portfolio</h3>
-            <p className="text-gray-400 dark:text-gray-500 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               Building innovative solutions through code. Passionate about creating exceptional digital experiences.
             </p>
             <div className="flex gap-3">
@@ -47,7 +47,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 bg-gray-800 dark:bg-gray-900 hover:bg-primary-600 dark:hover:bg-primary-600 
+                  className="p-2.5 bg-gray-800 hover:bg-primary-600 
                              text-gray-400 hover:text-white rounded-lg transition-all duration-300 
                              transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   aria-label={social.name}
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <a 
                     href={link.path} 
-                    className="text-gray-400 dark:text-gray-500 hover:text-primary-400 dark:hover:text-primary-400 
+                    className="text-gray-400 hover:text-primary-400 
                                transition-colors inline-flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-primary-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
@@ -82,7 +82,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Get in Touch</h3>
             <div className="space-y-3">
-              <p className="flex items-start gap-2 text-gray-400 dark:text-gray-500">
+              <p className="flex items-start gap-2 text-gray-400">
                 <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -90,7 +90,7 @@ const Footer = () => {
                   aliabofooda1234@gmail.com
                 </a>
               </p>
-              <p className="flex items-start gap-2 text-gray-400 dark:text-gray-500">
+              <p className="flex items-start gap-2 text-gray-400">
                 <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -102,16 +102,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800 dark:border-gray-900">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 dark:text-gray-600 text-sm text-center md:text-left">
+            <p className="text-gray-500 text-sm text-center md:text-left">
               © {currentYear} Ali Ashraf. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="/privacy" className="text-gray-500 dark:text-gray-600 hover:text-primary-400 transition-colors">
+              <a href="/privacy" className="text-gray-500 hover:text-primary-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="/terms" className="text-gray-500 dark:text-gray-600 hover:text-primary-400 transition-colors">
+              <a href="/terms" className="text-gray-500 hover:text-primary-400 transition-colors">
                 Terms of Service
               </a>
             </div>
@@ -124,8 +124,7 @@ const Footer = () => {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-8 p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg 
                    hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-40
-                   focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
-                   dark:focus-visible:ring-offset-gray-900"
+                   focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
         aria-label="Scroll to top"
         title="Back to top"
       >

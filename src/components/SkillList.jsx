@@ -1,3 +1,13 @@
+import { memo } from 'react';
+
+/**
+ * SkillList Component - Display skills organized by category
+ * Wrapped with React.memo to prevent unnecessary re-renders when parent component updates
+ * 
+ * @param {Object} props - Component props
+ * @param {Array} props.skills - Array of skill categories with items
+ * @returns {JSX.Element|null} Rendered skill list or null if no skills
+ */
 const SkillList = ({ skills }) => {
   if (!skills || skills.length === 0) {
     return null;
@@ -27,4 +37,4 @@ const SkillList = ({ skills }) => {
   );
 };
 
-export default SkillList;
+export default memo(SkillList);

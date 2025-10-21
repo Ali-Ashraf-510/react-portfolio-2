@@ -1,0 +1,83 @@
+{
+  "name": "Ali Ashraf",
+  "title": "Data Science & Machine Learning Engineer",
+  "email": "aliabofooda1234@gmail.com",
+  "phone": "+20 123 456 7890",
+  "location": "Egypt (Remote Available)",
+  "bio": "Passionate Machine Learning Engineer specializing in Deep Learning technologies. With expertise in Python and hands-on experience with frameworks like PyTorch and TensorFlow, I'm dedicated to building intelligent models that address real-world challenges. From natural language processing to computer vision applications, I thrive on pushing the boundaries of artificial intelligence.",
+  "tagline": "Transforming complex data into actionable insights through advanced machine learning",
+  "github": "https://github.com/Ali-Ashraf-510",
+  "linkedin": "https://www.linkedin.com/in/ali-ashraf-8b619b22a",
+  "twitter": "",
+  "resume": "/assets/resume.pdf",
+  "skills": [
+    {
+      "category": "Data Science Tools",
+      "items": ["Python", "Jupyter", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
+    },
+    {
+      "category": "Machine Learning",
+      "items": ["Scikit-learn", "XGBoost", "Random Forest", "Regression", "Classification", "Clustering"]
+    },
+    {
+      "category": "Deep Learning",
+      "items": ["PyTorch", "TensorFlow", "Keras", "Neural Networks", "CNNs", "RNNs"]
+    },
+    {
+      "category": "Computer Vision",
+      "items": ["OpenCV", "MobileNet", "YOLO", "Image Processing", "Object Detection"]
+    },
+    {
+      "category": "Other Skills",
+      "items": ["Git", "Data Visualization", "Statistical Analysis", "Model Deployment", "API Development"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Machine Learning Engineer",
+      "company": "Freelance Projects",
+      "period": "2023 - Present",
+      "description": "Developing AI solutions including fire detection systems with 98% accuracy using MobileNetV2 architecture"
+    },
+    {
+      "title": "AI Trainee",
+      "company": "NTI / Huawei Egyptian Talent Academy",
+      "period": "2024",
+      "description": "Completed 80 hours of comprehensive AI training, achieving 98% score in the program"
+    }
+  ],
+  "education": [
+    {
+      "degree": "NTI AI Graduate Certification",
+      "school": "National Telecommunication Institute / Huawei",
+      "period": "2024",
+      "description": "Achieved 98% score in 80-hour comprehensive AI training program"
+    },
+    {
+      "degree": "HCIA Certification",
+      "school": "Huawei Technologies",
+      "period": "2024",
+      "description": "Certified in AI and cloud computing fundamentals"
+    },
+    {
+      "degree": "Frontend Developer",
+      "school": "Digital Egypt Pioneers Initiative (DEPI)",
+      "period": "April - October 2024",
+      "description": "160 hours of training in software development and frontend technologies"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "98% Model Accuracy",
+      "description": "Fire Detection System"
+    },
+    {
+      "title": "10+ ML Models",
+      "description": "Successfully built and deployed"
+    },
+    {
+      "title": "5+ Data Projects",
+      "description": "Completed AI/ML projects"
+    }
+  ]
+}

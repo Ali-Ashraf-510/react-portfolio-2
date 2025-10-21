@@ -1,0 +1,14 @@
+# Add your images here
+# Recommended structure:
+# - profile.jpg (for About page)
+# - hero-photo.jpg (for Home page)
+# - /certs/ (folder for certificate images)
+# - /projects/ (folder for project screenshots)
+
+# Image Guidelines:
+# - Profile photo: 400x400px minimum
+# - Hero photo: 800x800px minimum
+# - Project images: 1200x800px recommended
+# - Certificate images: 600x400px recommended
+# - Use optimized formats: WebP, JPEG, or PNG
+# - Keep file sizes under 500KB for faster loading

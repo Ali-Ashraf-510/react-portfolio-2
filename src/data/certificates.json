@@ -1,0 +1,89 @@
+[
+  {
+    "id": "cert-1",
+    "title": "NTI AI Graduate Certification",
+    "issuer": "National Telecommunication Institute / Huawei",
+    "date": "2024",
+    "category": "Artificial Intelligence",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "NTI / Huawei Egyptian Talent Academy Track in Artificial Intelligence with 80 comprehensive hours of training and achieved an outstanding score of 98%.",
+    "achievements": {
+      "score": "98%",
+      "hours": "80h"
+    }
+  },
+  {
+    "id": "cert-2",
+    "title": "HCIA Certification",
+    "issuer": "Huawei Technologies",
+    "date": "2024",
+    "category": "Cloud Computing & AI",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Certified in Huawei's AI and cloud computing fundamentals, demonstrating comprehensive expertise in enterprise-level artificial intelligence solutions and infrastructure."
+  },
+  {
+    "id": "cert-3",
+    "title": "DEPI Front End Graduate Certification",
+    "issuer": "Digital Egypt Pioneers Initiative - DEPI",
+    "date": "April - October 2024",
+    "category": "Web Development",
+    "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Successfully achieving excellence in the Digital Egypt Pioneers Program (Software Development – Frontend Developer) from April to October 2024.",
+    "achievements": {
+      "hours": "160h"
+    }
+  },
+  {
+    "id": "cert-4",
+    "title": "Business English Track",
+    "issuer": "Ministry of Communications and Information Technology (MCIT) – Digital Egypt Pioneers",
+    "date": "April - October 2024",
+    "category": "Professional Skills",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Successfully completed the Business English Track (Round 1) offered by OTO Courses under the sponsorship of the Ministry of Communications and Information Technology."
+  },
+  {
+    "id": "cert-5",
+    "title": "Machine Learning Specialization",
+    "issuer": "Self-Study & Practice",
+    "date": "2023 - 2024",
+    "category": "Machine Learning",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Comprehensive study and practical implementation of machine learning algorithms including regression, classification, and clustering techniques."
+  },
+  {
+    "id": "cert-6",
+    "title": "Deep Learning with PyTorch",
+    "issuer": "Self-Study & Projects",
+    "date": "2023 - 2024",
+    "category": "Deep Learning",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Advanced deep learning training with PyTorch framework, including neural networks, CNNs, and computer vision applications."
+  },
+  {
+    "id": "cert-7",
+    "title": "Computer Vision Fundamentals",
+    "issuer": "Self-Study & Research",
+    "date": "2023 - 2024",
+    "category": "Computer Vision",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Image processing, object detection, and classification using OpenCV and deep learning architectures like YOLO and MobileNet."
+  },
+  {
+    "id": "cert-8",
+    "title": "Data Science with Python",
+    "issuer": "Self-Study & Practice",
+    "date": "2022 - 2024",
+    "category": "Data Science",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    "link": "",
+    "description": "Data analysis and visualization using Python, Pandas, NumPy, and Matplotlib for extracting insights from complex datasets."
+  }
+]

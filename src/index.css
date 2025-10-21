@@ -1,0 +1,404 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   CSS CUSTOM PROPERTIES - DESIGN SYSTEM
+   =========================== */
+:root {
+  /* Colors - Light Mode */
+  --color-bg-primary: 255, 255, 255;
+  --color-bg-secondary: 249, 250, 251;
+  --color-bg-tertiary: 243, 244, 246;
+  --color-surface: 255, 255, 255;
+  --color-surface-hover: 249, 250, 251;
+  
+  --color-text-primary: 17, 24, 39;
+  --color-text-secondary: 75, 85, 99;
+  --color-text-tertiary: 156, 163, 175;
+  
+  --color-border: 229, 231, 235;
+  --color-border-hover: 209, 213, 219;
+  
+  /* Brand Colors */
+  --color-primary: 37, 99, 235;
+  --color-primary-hover: 29, 78, 216;
+  --color-secondary: 147, 51, 234;
+  --color-accent: 192, 38, 211;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+}
+
+/* Dark Mode Colors */
+.dark {
+  --color-bg-primary: 3, 7, 18;
+  --color-bg-secondary: 17, 24, 39;
+  --color-bg-tertiary: 31, 41, 55;
+  --color-surface: 31, 41, 55;
+  --color-surface-hover: 55, 65, 81;
+  
+  --color-text-primary: 249, 250, 251;
+  --color-text-secondary: 209, 213, 219;
+  --color-text-tertiary: 156, 163, 175;
+  
+  --color-border: 55, 65, 81;
+  --color-border-hover: 75, 85, 99;
+  
+  /* Enhanced shadows for dark mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color var(--transition-base), color var(--transition-base);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    @apply font-bold text-gray-900 dark:text-gray-50;
+  }
+  
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg md:text-xl; }
+  h6 { @apply text-base md:text-lg; }
+  
+  p {
+    @apply text-gray-600 dark:text-gray-300 leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  button {
+    @apply transition-all duration-200;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-900;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ===========================
+     BUTTON COMPONENTS
+     =========================== */
+  .btn {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white 
+           shadow-md hover:shadow-lg focus-visible:ring-primary-500 
+           dark:bg-primary-500 dark:hover:bg-primary-600 dark:active:bg-primary-700
+           py-2.5 px-6;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-600 hover:bg-secondary-700 active:bg-secondary-800 text-white 
+           shadow-md hover:shadow-lg focus-visible:ring-secondary-500
+           dark:bg-secondary-500 dark:hover:bg-secondary-600
+           py-2.5 px-6;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary-600 text-primary-600 hover:bg-primary-50 active:bg-primary-100
+           dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-950
+           focus-visible:ring-primary-500 py-2 px-6;
+  }
+  
+  .btn-ghost {
+    @apply btn text-gray-700 hover:bg-gray-100 active:bg-gray-200
+           dark:text-gray-300 dark:hover:bg-gray-800 dark:active:bg-gray-700
+           py-2 px-4;
+  }
+  
+  .btn-sm {
+    @apply py-1.5 px-4 text-sm;
+  }
+  
+  .btn-lg {
+    @apply py-3 px-8 text-lg;
+  }
+
+  /* ===========================
+     CARD COMPONENTS
+     =========================== */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-soft hover:shadow-medium
+           dark:shadow-dark-sm dark:hover:shadow-dark-md
+           transition-all duration-300 overflow-hidden
+           border border-gray-100 dark:border-gray-700;
+  }
+  
+  .card-interactive {
+    @apply card transform hover:-translate-y-1 hover:shadow-large
+           dark:hover:shadow-dark-lg cursor-pointer;
+  }
+  
+  .card-hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl
+           dark:hover:shadow-dark-lg;
+  }
+  
+  .card-glass {
+    @apply bg-white dark:bg-gray-800 backdrop-blur-lg
+           border border-gray-200 dark:border-gray-700;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .dark .card-glass {
+    background-color: rgba(31, 41, 55, 0.8);
+    border-color: rgba(55, 65, 81, 0.5);
+  }
+
+  /* ===========================
+     SURFACE & BACKGROUND
+     =========================== */
+  .surface {
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700;
+  }
+  
+  .surface-secondary {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+  
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600
+           dark:from-primary-500 dark:to-secondary-500;
+  }
+  
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-600 to-primary-600
+           dark:from-accent-500 dark:to-primary-500;
+  }
+
+  /* ===========================
+     TEXT & TYPOGRAPHY
+     =========================== */
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl;
+  }
+  
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600
+           dark:from-primary-400 dark:to-accent-400;
+  }
+  
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  /* ===========================
+     BADGES & TAGS
+     =========================== */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300;
+  }
+  
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300;
+  }
+
+  /* ===========================
+     FORM ELEMENTS
+     =========================== */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+           placeholder:text-gray-400 dark:placeholder:text-gray-500
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20
+           dark:focus:border-primary-400 dark:focus:ring-primary-400/20
+           transition-all duration-200;
+  }
+  
+  .textarea {
+    @apply input min-h-[120px] resize-y;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  /* ===========================
+     LOADING & SKELETON
+     =========================== */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+  }
+  
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-gray-200 border-t-primary-600
+           dark:border-gray-700 dark:border-t-primary-400;
+  }
+
+  /* ===========================
+     DIVIDERS
+     =========================== */
+  .divider {
+    @apply border-t border-gray-200 dark:border-gray-700;
+  }
+  
+  .divider-vertical {
+    @apply border-l border-gray-200 dark:border-gray-700;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .gradient-border {
+    position: relative;
+    background: white;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

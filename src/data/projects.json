@@ -1,0 +1,62 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Fire Detection System",
+    "description": "A state-of-the-art CNN-based fire detection model built with MobileNetV2 architecture, achieving over 98% accuracy in real-time fire detection. Optimized for mobile deployment with efficient resource utilization.",
+    "image": "https://images.unsplash.com/photo-1551703599-6b3e8379aa8d?w=800&h=600&fit=crop",
+    "technologies": ["MobileNetV2", "PyTorch", "Computer Vision", "OpenCV", "Deep Learning"],
+    "github": "https://github.com/Ali-Ashraf-510/FireDetectionApp",
+    "demo": "https://www.linkedin.com/posts/ali-ashraf-8b619b22a_ai-deeplearning-tensorflow-activity-7356086060134653952-cm_f",
+    "featured": true,
+    "features": [
+      "Real-time processing capability",
+      "Mobile-optimized architecture",
+      "High accuracy detection (98%+)",
+      "Low computational overhead"
+    ],
+    "metrics": {
+      "accuracy": "98%",
+      "status": "Completed"
+    }
+  },
+  {
+    "id": "proj-2",
+    "title": "Machine Learning Models Portfolio",
+    "description": "Collection of 10+ machine learning models covering various domains including classification, regression, and clustering problems.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    "technologies": ["Scikit-learn", "Python", "Pandas", "NumPy", "Data Analysis"],
+    "github": "https://github.com/Ali-Ashraf-510",
+    "demo": null,
+    "featured": true
+  },
+  {
+    "id": "proj-3",
+    "title": "Computer Vision Applications",
+    "description": "Various computer vision projects including object detection, image classification, and image processing using deep learning techniques.",
+    "image": "https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=800&h=600&fit=crop",
+    "technologies": ["OpenCV", "YOLO", "CNNs", "TensorFlow", "Image Processing"],
+    "github": "https://github.com/Ali-Ashraf-510",
+    "demo": null,
+    "featured": false
+  },
+  {
+    "id": "proj-4",
+    "title": "Data Analysis Projects",
+    "description": "Comprehensive data analysis projects using statistical methods and data visualization to extract meaningful insights from complex datasets.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    "technologies": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Statistical Analysis"],
+    "github": "https://github.com/Ali-Ashraf-510",
+    "demo": null,
+    "featured": false
+  },
+  {
+    "id": "proj-5",
+    "title": "Deep Learning Research",
+    "description": "Research and implementation of advanced deep learning architectures including neural networks, CNNs, and RNNs for various AI applications.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    "technologies": ["PyTorch", "TensorFlow", "Keras", "Neural Networks", "Research"],
+    "github": "https://github.com/Ali-Ashraf-510",
+    "demo": null,
+    "featured": true
+  }
+]

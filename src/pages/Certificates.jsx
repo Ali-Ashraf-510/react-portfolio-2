@@ -18,15 +18,21 @@ const Certificates = () => {
 
   // Memoize unique categories to avoid recalculation on every render
   const allCategories = useMemo(
-    () => ['All', ...new Set(certificates.map(c => c.category))],
+    () => {
+      if (!certificates || certificates.length === 0) return ['All'];
+      return ['All', ...new Set(certificates.map(c => c.category))];
+    },
     [certificates]
   );
 
   // Memoize filtered certificates to avoid recalculation on every render
   const filteredCertificates = useMemo(
-    () => selectedCategory === 'All' 
-      ? certificates 
-      : certificates.filter(c => c.category === selectedCategory),
+    () => {
+      if (!certificates) return [];
+      return selectedCategory === 'All' 
+        ? certificates 
+        : certificates.filter(c => c.category === selectedCategory);
+    },
     [certificates, selectedCategory]
   );
 

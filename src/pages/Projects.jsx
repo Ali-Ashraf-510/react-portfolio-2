@@ -18,15 +18,21 @@ const Projects = () => {
 
   // Memoize unique technologies to avoid recalculation on every render
   const allTechnologies = useMemo(
-    () => ['All', ...new Set(projects.flatMap(p => p.technologies))],
+    () => {
+      if (!projects || projects.length === 0) return ['All'];
+      return ['All', ...new Set(projects.flatMap(p => p.technologies))];
+    },
     [projects]
   );
 
   // Memoize filtered projects to avoid recalculation on every render
   const filteredProjects = useMemo(
-    () => selectedTech === 'All' 
-      ? projects 
-      : projects.filter(p => p.technologies.includes(selectedTech)),
+    () => {
+      if (!projects) return [];
+      return selectedTech === 'All' 
+        ? projects 
+        : projects.filter(p => p.technologies.includes(selectedTech));
+    },
     [projects, selectedTech]
   );
 
